@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\APIs_to_the_world\_nuget\TetraPak.Common\TetraPak.Common\TetraPak.Common.csproj" />
+      <ProjectReference Include="..\TetraPak.Common\TetraPak.Common\TetraPak.Common.csproj" />
     </ItemGroup>
 
 </Project>

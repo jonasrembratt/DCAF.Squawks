@@ -10,23 +10,36 @@ namespace DCAF.Squawks
     // ReSharper disable once ClassNeverInstantiated.Global
     class Program
     {
+        const string Executable = "dcafsquawks";
+        const string ArgHelp1 = "-?";
+        const string ArgHelp2 = "-h";
+        const string ArgHelp3 = "--help";
         const string ArgOverwrite1 = "-o";
         const string ArgOverwrite2 = "--overwite";
         const string ArgInteractive1 = "-i";
         const string ArgInteractive2 = "--interactive";
         const string ArgWritePath1 = "-w";
         const string ArgWritePath2 = "--write";
-        
-        public static bool IsInteractive { get; set; }
 
-        public static bool OverwriteExistingOutputFile { get; set; }
+        static bool IsHelpRequested { get; set; }
+
+        static bool IsInteractive { get; set; }
+
+        static bool OverwriteExistingOutputFile { get; set; }
         
         static async Task Main(string[] args)
         {
             initializeFromArgs(args);
+            if (IsHelpRequested)
+            {
+                IsInteractive = true;
+                endWithMessage("", 1);
+                return;
+            }
             
             if (!tryGetInputFile(args, out var inputFile))
             {
+                IsHelpRequested = true;
                 endWithMessage("Expected argument: Path for JSON file to process", 1);
                 return;
             }
@@ -50,9 +63,9 @@ namespace DCAF.Squawks
             if (file.Exists && !OverwriteExistingOutputFile)
                 throw new Exception(
                     $"File already exists: {file.FullName} (set {ArgOverwrite1} or {ArgOverwrite2} parameter to overwrite)");
-            
-            
-            await using var stream = file.OpenWrite();
+
+
+            await using var stream = new FileStream(file.FullName, FileMode.Truncate);
             await using var writer = new StreamWriter(stream);
             await writer.WriteAsync(content);
         }
@@ -125,6 +138,7 @@ namespace DCAF.Squawks
         {
             IsInteractive = args.Any(i => i is ArgInteractive1 or ArgInteractive2);
             OverwriteExistingOutputFile = args.Any(i => i is ArgOverwrite1 or ArgOverwrite2);
+            IsHelpRequested = args.Any(i => i is ArgHelp1 or ArgHelp2 or ArgHelp3);
         }
 
         static void endWithMessage(string message, int exitCode)
@@ -134,9 +148,36 @@ namespace DCAF.Squawks
                 Environment.Exit(exitCode);
                 return;
             }
+
+            if (IsHelpRequested)
+            {
+                showHelp();
+            }
             Console.WriteLine($"{message} (press any key to exit)");
             Console.ReadKey();
             Environment.ExitCode = exitCode;
+        }
+
+        static void showHelp()
+        {
+            Console.WriteLine(
+                $"{Executable} <json-template-path>"+
+                $" [{ArgWritePath1}|{ArgWritePath2} <LotATC-json-path>]"+
+                $" [{ArgOverwrite1}|{ArgOverwrite2}]"+
+                $" [{ArgInteractive1}|{ArgInteractive2}]"+
+                $" [{ArgHelp1}|{ArgHelp2}|{ArgHelp3}]");
+
+            Console.Write($" [{ArgWritePath1}|{ArgWritePath2} <LotATC-json-path>]");
+            Console.WriteLine( " = Specifies the path to the output file (to be used with LotATC)");
+            
+            Console.Write($" [{ArgOverwrite1}|{ArgOverwrite2}]");
+            Console.WriteLine( " = Allows replacing/overwriting the LotATC output file");
+            
+            Console.Write($" [{ArgInteractive1}|{ArgInteractive2}]");
+            Console.WriteLine( " = Outputs information about the outcome and waits for user to confirm");
+            
+            Console.Write($" [{ArgHelp1}|{ArgHelp2}|{ArgHelp3}]");
+            Console.WriteLine( " = Presents this help");
         }
     }
 }
