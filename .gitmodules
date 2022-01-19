@@ -1,0 +1,3 @@
+[submodule "TetraPak.Common"]
+	path = TetraPak.Common
+	url = https://github.com/Tetra-Pak-APIs/TetraPak.Common
