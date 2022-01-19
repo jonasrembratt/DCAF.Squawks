@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <LangVersion>default</LangVersion>
+        <Nullable>enable</Nullable>
+        <AssemblyName>dcafsquawks</AssemblyName>
+        <RootNamespace>DCAF.Squawks</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.Text.Json" Version="6.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\APIs_to_the_world\_nuget\TetraPak.Common\TetraPak.Common\TetraPak.Common.csproj" />
+    </ItemGroup>
+
+</Project>

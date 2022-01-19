@@ -1,0 +1,4 @@
+C:\Data\Source\_throwAway\DCAF.Squawks\code\bin\Release\net5.0\publish\dcafsquawks.pdb
+C:\Data\Source\_throwAway\DCAF.Squawks\code\bin\Release\net5.0\publish\TetraPak.Common.pdb
+C:\Data\Source\_throwAway\DCAF.Squawks\code\bin\Release\net5.0\publish\TetraPak.Common.xml
+C:\Data\Source\_throwAway\DCAF.Squawks\code\bin\Release\net5.0\publish\dcafsquawks.exe
