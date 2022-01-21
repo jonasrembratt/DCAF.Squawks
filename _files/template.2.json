@@ -1,0 +1,142 @@
+
+{
+  "__comments":"THIS FILE IS AN EXAMPLE AND WILL NOT BE LOADED BECAUSE enable=false",
+  "enable": true,
+  "transponders" : [
+    {
+      "mode1": "7001",
+      "comment": "VFR Low Level/Military Conspicuity",
+      "type" : "Hello World!"
+    },
+    {
+      "mode3": "7010",
+      "comment": "Visual Circuit Conspicuity"
+    },
+    {
+      "mode3": "7200",
+      "comment": "Shipborne Conspicuity"
+    },
+    {
+      "mode3": "1000",
+      "comment": "FAM Flight"
+    },
+    {
+      "mode3": "1001",
+      "comment": "Flying Ability Assessment"
+    },
+    {
+      "mode3": "1002",
+      "comment": "Visual Circuits Assessment"
+    },
+    {
+      "mode3": "1003",
+      "comment": "Departures & Arrivals Assessment"
+    },
+    {
+      "mode3": "1004",
+      "comment": "Formation Flight"
+    },
+    {
+      "mode3": "1005",
+      "comment": "Aerial refueling (DAY Assessment)"
+    },
+    {
+      "mode3": "1006",
+      "comment": "Aerial refueling (NIGHT Assessment)"
+    },
+    {
+      "mode3": "1007",
+      "comment": "Weaponeering Practice"
+    },
+    {
+      "mode3": "1010",
+      "comment": "Night Ops/Speechless Practice"
+    },
+    {
+      "mode3": "1011",
+      "comment": "Combat Readiness Assessment"
+    },
+    {
+      "mode3": "1012",
+      "comment": "Generic Air-to-Ground Sortie"
+    },
+    {
+      "mode3": "1013",
+      "comment": "Generic Air-to-Surface"
+    },
+    {
+      "mode3": "1014",
+      "comment": "Generic Air-to-Air Sortie"
+    },
+    
+    {
+      "mode3": "3000-3700+100",
+      "comment": "$(AWACS #1): Human traffic in receipt of Battle Management"
+    },
+    {
+      "mode3": "4000-4700 +100",
+      "comment": "$(AWACS #2): Human traffic in receipt of Battle Management"
+    },
+    {
+      "mode3": "5000-5700+100",
+      "comment": "$(AWACS #3): Human traffic in receipt of Battle Management"
+    },
+    {
+      "mode3": "6666",
+      "comment": "SAR Ops (Conspicuity)"
+    },
+    {
+      "mode3": "0020",
+      "comment": "MEDEVAC"
+    },
+    {
+      "mode3": "7777",
+      "comment": "Quick Reaction Alert"
+    },
+    {
+      "mode3": "7400",
+      "comment": "Datalink failure"
+    },
+    {
+      "mode3": "7500",
+      "comment": "Unlawful Interference"
+    },
+    {
+      "mode3": "7600",
+      "comment": "Radio Failure"
+    },
+    {
+      "mode3": "7700",
+      "comment": "Distress/Urgency"
+    },
+    {
+      "mode3": "0033",
+      "comment": "Parachute dropping in progress"
+    },
+    {
+      "mode3": "0026",
+      "comment": "AI AEW"
+    },
+    {
+      "mode3": "1400",
+      "comment": "AI Air Defence"
+    },
+    {
+      "mode3": "1701-1727",
+      "comment": "AI Tanker"
+    },
+    {
+      "mode3": "7000",
+      "comment": "AI Conspicuity"
+    },
+    {
+      "mode1": "23",
+      "comment": "SEAD on TGT A",
+      "classification": {
+        "classification": "friend",
+        "dimension": "air",
+        "sub_dimension": "fighter"
+      }
+    }
+  ]
+}

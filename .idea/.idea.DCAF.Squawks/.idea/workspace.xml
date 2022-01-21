@@ -8,20 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e392ea37-3440-4f53-82a3-3b910f446d04" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DCAF.Squawks/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DCAF.Squawks/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DCAF.Squawks/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DCAF.Squawks/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DCAF.Squawks/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.consoleDrop/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.consoleDrop/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.consoleDrop/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.consoleDrop/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.consoleDrop/.idea/riderPublish.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DCAF.Squawks.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DCAF.Squawks.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetraPak.Common" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/DCAF.Squawks.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/code/DCAF.Squawks.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_files/template.invalid.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_files/values.invalid.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DCAF.Squawks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DCAF.Squawks/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/code/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/serialization/LotAtcSquawksParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/code/serialization/LotAtcSquawksParser.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,13 +43,13 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
     <option name="showLigatures" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.DCAF.Squawks">
+  <component name="RunManager" selected=".NET Project.DCAF.Squawks !! invalid template JSON file">
     <configuration name="Self-contained binary MacOS" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" delete_existing_files="true" include_native_libs_for_self_extract="true" platform="Any CPU" produce_single_file="true" ready_to_run="true" runtime="osx-x64" target_folder="$PROJECT_DIR$/code/bin/Release/net5.0/publish" target_framework="net5.0" uuid_high="7197136010995843196" uuid_low="-8976829203594639850" />
       <method v="2" />
@@ -67,9 +58,189 @@
       <riderPublish configuration="Release" delete_existing_files="true" include_native_libs_for_self_extract="true" platform="Any CPU" produce_single_file="true" ready_to_run="true" runtime="win-x64" target_folder="$PROJECT_DIR$/code/bin/Release/net5.0/publish" target_framework="net5.0" uuid_high="7197136010995843196" uuid_low="-8976829203594639850" />
       <method v="2" />
     </configuration>
-    <configuration name="DCAF.Squawks" type="DotNetProject" factoryName=".NET Project">
+    <configuration name="DCAF.Squawks - all args" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;$USER_HOME$/Desktop/test 2.json&quot; -i -w &quot;$USER_HOME$/Desktop/test.out.json&quot; -o" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/_files/template.json&quot; -i -v &quot;$PROJECT_DIR$/_files/values.json&quot; -w &quot;$USER_HOME$/Desktop/lotatc_dcaf.json&quot; -o" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net5.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="DCAF.Squawks - help only" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
+      <option name="PROGRAM_PARAMETERS" value="-?" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net5.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="DCAF.Squawks - implicit output path" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/_files/template.json&quot; -i -v &quot;$PROJECT_DIR$/_files/values.json&quot; -o" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net5.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="DCAF.Squawks - no args" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net5.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="DCAF.Squawks - no values" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/_files/template.json&quot; -i -w &quot;$USER_HOME$/Desktop/lotatc_dcaf.json&quot; -o" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net5.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="DCAF.Squawks - not interactive" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/_files/template.json&quot; -v &quot;$PROJECT_DIR$/_files/values.json&quot; -w &quot;$USER_HOME$/Desktop/lotatc_dcaf.json&quot; -o" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net5.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="DCAF.Squawks !! illegal overwrite" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/_files/template.json&quot; -i -v &quot;$PROJECT_DIR$/_files/values.json&quot; -w &quot;$USER_HOME$/Desktop/lotatc_dcaf.json&quot;" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net5.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="DCAF.Squawks !! invalid template JSON file" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/_files/template.invalid.json&quot; -i -v &quot;$PROJECT_DIR$/_files/values.json&quot; -w &quot;$USER_HOME$/Desktop/lotatc_dcaf.json&quot; -o" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net5.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="DCAF.Squawks !! invalid values JSON file" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/_files/template.json&quot; -i -v &quot;$PROJECT_DIR$/_files/values.invalid.json&quot;" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net5.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="DCAF.Squawks !! missing input file" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/_files/template.missing.json&quot; -i -v &quot;$PROJECT_DIR$/_files/values.json&quot; -w &quot;$USER_HOME$/Desktop/lotatc_dcaf.json&quot; -o" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net5.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="DCAF.Squawks !! missing values  file" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/_files/template.json&quot; -i -v &quot;$PROJECT_DIR$/_files/values.missing.json&quot; -w &quot;$USER_HOME$/Desktop/lotatc_dcaf.json&quot; -o" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -86,7 +257,17 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue=".NET Project.DCAF.Squawks" />
+      <item itemvalue=".NET Project.DCAF.Squawks - all args" />
+      <item itemvalue=".NET Project.DCAF.Squawks - no args" />
+      <item itemvalue=".NET Project.DCAF.Squawks - help only" />
+      <item itemvalue=".NET Project.DCAF.Squawks - implicit output path" />
+      <item itemvalue=".NET Project.DCAF.Squawks - no values" />
+      <item itemvalue=".NET Project.DCAF.Squawks - not interactive" />
+      <item itemvalue=".NET Project.DCAF.Squawks !! missing input file" />
+      <item itemvalue=".NET Project.DCAF.Squawks !! missing values  file" />
+      <item itemvalue=".NET Project.DCAF.Squawks !! invalid template JSON file" />
+      <item itemvalue=".NET Project.DCAF.Squawks !! invalid values JSON file" />
+      <item itemvalue=".NET Project.DCAF.Squawks !! illegal overwrite" />
       <item itemvalue="Publish to folder.Self-contained binary MacOS" />
       <item itemvalue="Publish to folder.Self-contained binary Win-64" />
     </list>
@@ -100,7 +281,8 @@
       <option name="presentableId" value="Default" />
       <updated>1642585418851</updated>
       <workItem from="1642585434045" duration="877000" />
-      <workItem from="1642591361994" duration="7018000" />
+      <workItem from="1642591361994" duration="7288000" />
+      <workItem from="1642724135160" duration="7643000" />
     </task>
     <servers />
   </component>
@@ -123,5 +305,50 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/code/Program.cs</url>
+          <line>110</line>
+          <properties documentPath="$PROJECT_DIR$/code/Program.cs" initialLine="107" containingFunctionPresentation="method 'readValuesAsync'">
+            <startOffsets>
+              <option value="3788" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3789" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/code/Program.cs</url>
+          <line>106</line>
+          <properties documentPath="$PROJECT_DIR$/code/Program.cs" initialLine="109" containingFunctionPresentation="method 'readValuesAsync'">
+            <startOffsets>
+              <option value="3649" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3650" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/code/Program.cs</url>
+          <line>52</line>
+          <properties documentPath="$PROJECT_DIR$/code/Program.cs" initialLine="54" containingFunctionPresentation="method 'Main'">
+            <startOffsets>
+              <option value="1561" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1562" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

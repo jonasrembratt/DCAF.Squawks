@@ -15,18 +15,25 @@ namespace DCAF.Squawks
         public async Task<string> ParseAsync(FileInfo file)
         {
             if (!file.Exists)
-                throw new FileNotFoundException($"File was not found: {file.FullName}", file.Name);
+                throw new FileNotFoundException($"File was not found: {file.FullName}");
 
             await using var stream = file.OpenRead();
-            var root = await JsonSerializer.DeserializeAsync<LotAtcRoot>(stream, new JsonSerializerOptions
+            try
             {
-                AllowTrailingCommas = true
-            });
+                var root = await JsonSerializer.DeserializeAsync<LotAtcRoot>(stream, new JsonSerializerOptions
+                {
+                    AllowTrailingCommas = true
+                });
 
-            if (root is null)
-                throw new SerializationException($"Failed to parse JSON in file: {file.FullName} (no result)");
+                if (root is null)
+                    throw new SerializationException($"Failed to parse JSON in file: {file.FullName} (no result)");
             
-            return toJson(expandSquawkRangesAndSubstituteVariables(root));
+                return toJson(expandSquawkRangesAndSubstituteVariables(root));
+            }
+            catch (JsonException ex)
+            {
+                throw new Exception($"In template JSON: {ex.Message}");
+            }
         }
 
         static string toJson(LotAtcRoot root) => JsonSerializer.Serialize(root, new JsonSerializerOptions
