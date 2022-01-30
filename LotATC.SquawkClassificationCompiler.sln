@@ -25,19 +25,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_lines", "_lines", "{43A19F
 		_files\values.json = _files\values.json
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_files", "_files", "{6A5BC12A-2128-4630-B6FA-F73D623F4CC2}"
-	ProjectSection(SolutionItems) = preProject
-		_files\dcaf.template.json5 = _files\dcaf.template.json5
-		_files\template.2.json = _files\template.2.json
-		_files\template.3.json = _files\template.3.json
-		_files\template.4.json5 = _files\template.4.json5
-		_files\template.counters-in-identifiers.json5 = _files\template.counters-in-identifiers.json5
-		_files\template.invalid.json = _files\template.invalid.json
-		_files\template.json = _files\template.json
-		_files\values.invalid.json = _files\values.invalid.json
-		_files\values.json = _files\values.json
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

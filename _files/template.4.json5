@@ -67,15 +67,15 @@
     },
     {
       "mode3": "7040-7047",
-      "comment": "Aerodrome #1"
+      "comment": "$(Aerodrome #1)"
     },
     {
       "mode3": "7050-7057",
-      "comment": "Aerodrome #2"
+      "comment": "$(Aerodrome #2)"
     },
     {
       "mode3": "7060-7067",
-      "comment": "Aerodrome #3"
+      "comment": "$(Aerodrome #3)"
     },
     {
       "mode3": "0026",

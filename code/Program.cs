@@ -11,18 +11,18 @@ namespace DCAF.Squawks
     // ReSharper disable once ClassNeverInstantiated.Global
     class Program
     {
-        const string Executable = "dcafsquawks";
+        const string Executable = "lascc";
         const string ArgHelp1 = "-?";
         const string ArgHelp2 = "-h";
         const string ArgHelp3 = "--help";
         const string ArgOverwrite1 = "-o";
         const string ArgOverwrite2 = "--overwite";
-        const string ArgInteractive1 = "-i";
-        const string ArgInteractive2 = "--interactive";
+        const string ArgVerbose1 = "-v";
+        const string ArgVerbose2 = "--verbose";
         const string ArgWritePath1 = "-w";
         const string ArgWritePath2 = "--write";
-        const string ArgValuesPath1 = "-v";
-        const string ArgValuesPath2 = "--values";
+        const string ArgDataPath1 = "-d";
+        const string ArgDataPath2 = "--data";
 
         static FileInfo? InputFile { get; set; }
 
@@ -94,10 +94,12 @@ namespace DCAF.Squawks
             if (!ValuesFile?.Exists ?? true)
                 return null;
 
-            await using var stream = ValuesFile.OpenRead();
+            var jsonProcessor = new JsonProcessor();
+            await using var stream = await jsonProcessor.LoadAndCleanJsonAsync(ValuesFile);
             try
             {
-                return await JsonSerializer.DeserializeAsync<Dictionary<string, string>>(stream,
+                return await JsonSerializer.DeserializeAsync<Dictionary<string, string>>(
+                    stream,
                     new JsonSerializerOptions
                     {
                         AllowTrailingCommas = true
@@ -155,7 +157,7 @@ namespace DCAF.Squawks
 
         static void initializeFromArgs(IReadOnlyList<string> args)
         {
-            IsInteractive = args.Any(i => i is ArgInteractive1 or ArgInteractive2);
+            IsInteractive = args.Any(i => i is ArgVerbose1 or ArgVerbose2);
             IsHelpRequested = args.Any(i => i is ArgHelp1 or ArgHelp2 or ArgHelp3);
             IsOverwriteExistingOutputFile = args.Any(i => i is ArgOverwrite1 or ArgOverwrite2);
 
@@ -177,7 +179,7 @@ namespace DCAF.Squawks
             
             InputFile = inputFile;
             OutputFile = new FileInfo(getOutputFilePath(InputFile, args));
-            if (tryGetArgsValue(args, out var path, ArgValuesPath1, ArgValuesPath2))
+            if (tryGetArgsValue(args, out var path, ArgDataPath1, ArgDataPath2))
             {
                 ValuesFile = new FileInfo(path);
                 if (!ValuesFile.Exists)
@@ -229,17 +231,17 @@ namespace DCAF.Squawks
             var color = ConsoleColor.Cyan;
             writeToConsole(
                 $"{Executable} <input path>"+
-                $" [{ArgValuesPath1} | {ArgValuesPath2} <values path>]"+
+                $" [{ArgDataPath1} | {ArgDataPath2} <values path>]"+
                 $" [{ArgWritePath1} | {ArgWritePath2} <output path>]"+
                 $" [{ArgOverwrite1} | {ArgOverwrite2}]"+
-                $" [{ArgInteractive1} | {ArgInteractive2}]"+
+                $" [{ArgVerbose1} | {ArgVerbose2}]"+
                 $" [{ArgHelp1} | {ArgHelp2} | {ArgHelp3}]", 
                 color);
 
             writeToConsole("<input path> = Specifies path to LotATC JSON template file (to be processed)", color);
 
             writeToConsole(
-                $" [{ArgValuesPath1}|{ArgValuesPath2} <values path>]" + 
+                $" [{ArgDataPath1}|{ArgDataPath2} <values path>]" + 
                 " = Specifies path to a JSON file containing values for variables in input file", 
                 color);
 
@@ -254,7 +256,7 @@ namespace DCAF.Squawks
                 color);
             
             writeToConsole(
-                $" [{ArgInteractive1}|{ArgInteractive2}]"+
+                $" [{ArgVerbose1}|{ArgVerbose2}]"+
                 " = Outputs information about the outcome and waits for user to confirm (avoid with automation)",
                 color);
 

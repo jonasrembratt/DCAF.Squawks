@@ -237,6 +237,8 @@ To allow for more details the squawk compiler can take a second "values"
 file as its input to resolve dynamic values. Here's how you could 
 achieve this by modifying the original squawk range declaration example:
 
+## Example template file with variables
+
 ```json
 {
   "__comments":"THIS FILE IS AN EXAMPLE AND WILL NOT BE LOADED BECAUSE enable=false",
@@ -262,8 +264,10 @@ that this is a dynamic value, and that it should try and look it up
 in a values file you're supplying. The values file is also a JSON file
 with a single list of key/value pairs, like this:
 
+### Example data file
+
 ```json5
-// values-syria.json
+// data-syria.json
 {
   "Aerodrome #1": "Incirlik AB",
   "Aerodrome #2": "Ramat David AB",
@@ -316,6 +320,71 @@ removing the qualifier tokens (the "$(" and ")").
 
 ## Running the compiler
 
--- TODO --
+You invoke the LotATC squawk classification compiler from the command line. The exact approach 
+differs between Windows and Mac but the arguments passed to it is the same for both:
+
+The first argument needs to be the name of (or path to) your template file 
+(the one that contains your ranges, counters and variable references). This 
+argument is necessary and the compiler will end with an error message if it is omitted.
+
+All other arguments are optional. Some of them are just "flags" while others
+are values preceded by the argument identifier:
+
+### --write (-w)
+
+This value specifies the name of (or path to) the compiled LotATC you want compiled. 
+This is the file you intend to upload to the LotATC server.
+
+Example:
+```
+lascc myLotATC_template.json5 -w myLotATC.json
+lascc myLotATC_template.json5 --write myLotATC.json
+```
+
+### --overwrite (-o)
+
+This is just a flag (so no value is expected) that specifies to the 
+compiler that it should overwrite the output file (see [--write](#--write--w) 
+above) if it already exists. If the output file already exists when you
+run the compiler it will end with an error message unless you add this flag. 
+
+Example:
+```
+lascc myLotATC_template.json5 -w myLotATC.json -o
+```
+
+### --verbose (-v)
+
+This flag specifies to the compiler that you want it to output its
+progress. This can be useful for understanding what happens when
+you run the compiler manually (as opposed to being a part of an 
+automated process, such as a DevOps build flow for example).
+
+### --data (-d)
+
+This value specifies the name of (or path to) a data file, to be used
+by the compiler to resolve dynamic values (when included in the template 
+file). As an example, if you place the [example data file (above)](#example-data-file)
+in your compiler folder, along with your [example template file](#example-template-file-with-variables),
+this is how you could invoke the compiler:
+
+Example:
+```
+lascc myLotATC_template.json5 -w myLotATC.json -o -d data-syria.json
+```
+
+### --help (-h or -?)
+
+Specifies to the compiler that you want it to just show a help. 
+This will produce a list of arguments available and a short explanation.
+
+## Windows
+
+## Mac
+
+
+
+Open a Finder window and proceed to wherever the compile
+
 
 [lot-atc-json-document]: https://www.lotatc.com/documentation/client/classification.html#transponder-format

@@ -26,25 +26,6 @@ namespace DCAF.Squawks
 
             return substituteAllValues();
 
-            string substituteAllValues()
-            {
-                var ca = text.ToCharArray();
-                var sb = new StringBuilder();
-                for (var i = 0; i < ca.Length; i++)
-                {
-                    var c = ca[i];
-                    if (isVariable(ca, ref i, out var value) || value is { })
-                    {
-                        sb.Append(value);
-                        continue;
-                    }
-
-                    sb.Append(c);
-                }
-
-                return sb.ToString();
-            }
-
             string substituteAllCounters()
             {
                 var ca = text.ToCharArray();
@@ -66,6 +47,25 @@ namespace DCAF.Squawks
                     }
 
                     sb.Append(counter.NextValue);
+                }
+
+                return sb.ToString();
+            }
+
+            string substituteAllValues()
+            {
+                var ca = text.ToCharArray();
+                var sb = new StringBuilder();
+                for (var i = 0; i < ca.Length; i++)
+                {
+                    var c = ca[i];
+                    if (isVariable(ca, ref i, out var value) || value is { })
+                    {
+                        sb.Append(value);
+                        continue;
+                    }
+
+                    sb.Append(c);
                 }
 
                 return sb.ToString();
