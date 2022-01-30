@@ -28,12 +28,12 @@ very simple. Here's an example:
   "enable": true,
   "transponders" : [
     {
-        "mode3": "7001",
-        "comment": "VFR"
+      "mode3": "7001",
+      "comment": "VFR"
     },
     {
-        "mode3": "7040-7047",
-        "comment": "Aerodrome #1"
+      "mode3": "7040-7047",
+      "comment": "Aerodrome #1"
     }
   ]
 }
