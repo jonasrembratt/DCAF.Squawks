@@ -5,14 +5,15 @@ In LotATC you can supply a JSON file for your use of squawk codes.
 > You can read more about [this feature here][lot-atc-json-document].
 
 This is a very useful feature for controllers but creating the file and 
-keeping it updated involves quite a lot of work, usually repetitive as 
+keeping it updated involves quite a lot of work (usually repetitive) as 
 you want to express the use of ranges of squawk codes. 
 
 To remedy this problem and minimize the work for the squawk code layout
 designer, while allowing him/her to remain flexible as requirements 
-shift over time, the LotATC squawk compiler (`sqwkcomp`) is a tool that
-takes a LotATC squawk code JSON template as its output and creates 
-the operating LotATC JSON file you need.
+shift over time, the LotATC squawk classifications compiler (`lascc`) 
+is a tool that accepts a LotATC squawk code JSON template file as its 
+input, with an optional data file, and compiles the operating LotATC JSON 
+file you need, ready to be uploaded to your LotATC server.
 
 ## Basics
 
@@ -95,10 +96,10 @@ If you needed the range to increment differently you could add an
 incrementation value to the range declaration, like in this example:
 
 ```json5
-    {
-        "mode3": "7040 - 7077 +10",
-        "comment": "Aerodrome #1"
-    }
+  {
+    "mode3": "7040 - 7077 +10",
+    "comment": "Aerodrome #1"
+  }
 ```
 
 That would instead have created this sequence of squawk classifications:
@@ -128,20 +129,20 @@ Very likely you would have wanted the aerodromes to be numbered, like in
 this short snippet:
 
 ```json5
-[  
-    { 
-      "mode3": "7040",
-      "comment": "Aerodrome #1"
-    },
-    {
-      "mode3": "7041",
-      "comment": "Aerodrome #2"
-    },
-    {
-      "mode3": "7042",
-      "comment": "Aerodrome #3"
-    },
-    // and so on...
+[
+  { 
+    "mode3": "7040",
+    "comment": "Aerodrome #1"
+  },
+  {
+    "mode3": "7041", 
+    "comment": "Aerodrome #2"
+  },
+  {
+    "mode3": "7042",
+    "comment": "Aerodrome #3"
+  },
+  // and so on...
 ]
 ```
 
@@ -154,10 +155,10 @@ Here's how you would have written the above range to achieve incrementing
 the 'x' in "Aerodrome #x":
 
 ```json
-    {
-        "mode3": "7040-7047 #(x = 1 + 1)",
-        "comment": "Aerodrome #=(x)"
-    }
+  {
+    "mode3": "7040-7047 #(x = 1 + 1)",
+      "comment": "Aerodrome #=(x)"
+  }
 ```
 
 The `#(x = 1 + 1)` is interpreted by the compiler as: for this range; 
@@ -171,29 +172,29 @@ omitted.
 You might need multiple counters in a range, like in this example:
 
 ```json
-    {
-        "mode3": "7040-7047 #(unit = 1), #(tail = 400 + 10)",
-        "comment": "CAP - Devil 1-=(unit) (tail no. =(tail))"
-    }
+  {
+    "mode3": "7040-7047 #(unit = 1), #(tail = 400 + 10)",
+    "comment": "CAP - Devil 1-=(unit) (tail no. =(tail))"
+  }
 ```
 
 This would have been compiled into this output:
 
 ```json5
 [
-    {
-        "mode3": "7040",
-        "comment": "CAP - Devil 1-1 (tail no. 400)"
-    },
-    {
-        "mode3": "7041",
-        "comment": "CAP - Devil 1-2 (tail no. 410)"
-    },
-    {
-        "mode3": "7041",
-        "comment": "CAP - Devil 1-3 (tail no. 420)"
-    }
-    // and so on...
+  {
+    "mode3": "7040",
+    "comment": "CAP - Devil 1-1 (tail no. 400)"
+  },
+  {
+    "mode3": "7041",
+    "comment": "CAP - Devil 1-2 (tail no. 410)"
+  },
+  {
+    "mode3": "7041",
+    "comment": "CAP - Devil 1-3 (tail no. 420)"
+  }
+  // and so on...
 ]
 ```
 
@@ -212,19 +213,19 @@ Consider this squawk range again:
 
 ```json5
 [  
-    { 
-      "mode3": "7040",
-      "comment": "Aerodrome #1"
-    },
-    {
-      "mode3": "7041",
-      "comment": "Aerodrome #2"
-    },
-    {
-      "mode3": "7042",
-      "comment": "Aerodrome #3"
-    },
-    // and so on...
+  { 
+    "mode3": "7040",
+    "comment": "Aerodrome #1"
+  },
+  {
+    "mode3": "7041",
+    "comment": "Aerodrome #2"
+  },
+  {
+    "mode3": "7042",
+    "comment": "Aerodrome #3"
+  },
+  // and so on...
 ]
 ```
 
@@ -245,12 +246,12 @@ achieve this by modifying the original squawk range declaration example:
   "enable": true,
   "transponders" : [
     {
-        "mode3": "7001",
-        "comment": "VFR"
+      "mode3": "7001",
+      "comment": "VFR"
     },
     {
-        "mode3": "7040-7047 #(n = 1)",
-        "comment": "$(Aerodrome #=(x))"
+      "mode3": "7040-7047 #(n = 1)",
+      "comment": "$(Aerodrome #=(x))"
     }
   ]
 }
