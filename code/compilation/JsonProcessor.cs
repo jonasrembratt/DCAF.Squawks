@@ -26,13 +26,13 @@ namespace DCAF.Squawks
                         continue;
                     }
 
-                    if (isToken(SingleLineCommentQualifier))
+                    if (ca.IsToken(i, SingleLineCommentQualifier))
                     {
                         skipUntil(Environment.NewLine);
                         continue;
                     }
 
-                    if (isToken(MultiLineCommentQualifierPrefix))
+                    if (ca.IsToken(i, MultiLineCommentQualifierPrefix))
                     {
                         skipUntil(MultiLineCommentQualifierSuffix);
                         i += MultiLineCommentQualifierSuffix.Length;
@@ -48,7 +48,7 @@ namespace DCAF.Squawks
                             sb.Append(ca[i++]);
                         }
 
-                        for (; i < ca.Length && !isToken(terminator); i++)
+                        for (; i < ca.Length && !ca.IsToken(i, terminator); i++)
                         {
                             sb.Append(ca[i]);
                         }
@@ -61,22 +61,22 @@ namespace DCAF.Squawks
 
                     void skipUntil(string terminator)
                     {
-                        for (; i < ca.Length && !isToken(terminator); i++)
+                        for (; i < ca.Length && !ca.IsToken(i, terminator); i++)
                         {
                         }
                     }
 
-                    bool isToken(string pattern)
-                    {
-                        var pa = pattern.ToCharArray();
-                        for (var j = 0; j < pa.Length && j < ca.Length; j++)
-                        {
-                            if (ca[i + j] != pa[j])
-                                return false;
-                        }
-
-                        return true;
-                    }
+                    // bool isToken(string pattern) obsolete
+                    // {
+                    //     var pa = pattern.ToCharArray();
+                    //     for (var j = 0; j < pa.Length && j < ca.Length; j++)
+                    //     {
+                    //         if (ca[i + j] != pa[j])
+                    //             return false;
+                    //     }
+                    //
+                    //     return true;
+                    // }
                 }
 
                 var byteArray = Encoding.ASCII.GetBytes(sb.ToString());

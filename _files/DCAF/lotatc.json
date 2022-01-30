@@ -1,0 +1,486 @@
+{
+  "__comments": "File was processed by DCAF LotATC squawk compiler (please contact Jonas \u0022Wife\u0022 Rembratt for issues or questions)",
+  "enable": true,
+  "transponders": [
+    {
+      "mode1": "7001",
+      "comment": "VFR"
+    },
+    {
+      "mode3": "7010",
+      "comment": "Circuit"
+    },
+    {
+      "mode3": "7200",
+      "comment": "Shipborne Conspicuity"
+    },
+    {
+      "mode3": "1000",
+      "comment": "FAM Flight"
+    },
+    {
+      "mode3": "1001",
+      "comment": "Flying Ability Assessment"
+    },
+    {
+      "mode3": "1002",
+      "comment": "Visual Circuits Assessment"
+    },
+    {
+      "mode3": "1003",
+      "comment": "Departures Arrivals Assessment"
+    },
+    {
+      "mode3": "1004",
+      "comment": "Formation Flight"
+    },
+    {
+      "mode3": "1005",
+      "comment": "Aerial refueling (DAY Assessment)"
+    },
+    {
+      "mode3": "1006",
+      "comment": "Aerial refueling (NIGHT Assessment)"
+    },
+    {
+      "mode3": "1007",
+      "comment": "Weaponeering Practice"
+    },
+    {
+      "mode3": "1010",
+      "comment": "Night Ops/Speechless Practice"
+    },
+    {
+      "mode3": "1011",
+      "comment": "Combat Readiness Assessment"
+    },
+    {
+      "mode3": "1012",
+      "comment": "Generic Air-to-Ground Sortie"
+    },
+    {
+      "mode3": "1013",
+      "comment": "Generic Air-to-Surface"
+    },
+    {
+      "mode3": "1014",
+      "comment": "Generic Air-to-Air Sortie"
+    },
+    {
+      "mode3": "7040",
+      "comment": "Aerodrome #1"
+    },
+    {
+      "mode3": "7041",
+      "comment": "Aerodrome #1"
+    },
+    {
+      "mode3": "7042",
+      "comment": "Aerodrome #1"
+    },
+    {
+      "mode3": "7043",
+      "comment": "Aerodrome #1"
+    },
+    {
+      "mode3": "7044",
+      "comment": "Aerodrome #1"
+    },
+    {
+      "mode3": "7045",
+      "comment": "Aerodrome #1"
+    },
+    {
+      "mode3": "7046",
+      "comment": "Aerodrome #1"
+    },
+    {
+      "mode3": "7047",
+      "comment": "Aerodrome #1"
+    },
+    {
+      "mode3": "7050",
+      "comment": "Aerodrome #2"
+    },
+    {
+      "mode3": "7051",
+      "comment": "Aerodrome #2"
+    },
+    {
+      "mode3": "7052",
+      "comment": "Aerodrome #2"
+    },
+    {
+      "mode3": "7053",
+      "comment": "Aerodrome #2"
+    },
+    {
+      "mode3": "7054",
+      "comment": "Aerodrome #2"
+    },
+    {
+      "mode3": "7055",
+      "comment": "Aerodrome #2"
+    },
+    {
+      "mode3": "7056",
+      "comment": "Aerodrome #2"
+    },
+    {
+      "mode3": "7057",
+      "comment": "Aerodrome #2"
+    },
+    {
+      "mode3": "7060",
+      "comment": "Aerodrome #3"
+    },
+    {
+      "mode3": "7061",
+      "comment": "Aerodrome #3"
+    },
+    {
+      "mode3": "7062",
+      "comment": "Aerodrome #3"
+    },
+    {
+      "mode3": "7063",
+      "comment": "Aerodrome #3"
+    },
+    {
+      "mode3": "7064",
+      "comment": "Aerodrome #3"
+    },
+    {
+      "mode3": "7065",
+      "comment": "Aerodrome #3"
+    },
+    {
+      "mode3": "7066",
+      "comment": "Aerodrome #3"
+    },
+    {
+      "mode3": "7067",
+      "comment": "Aerodrome #3"
+    },
+    {
+      "mode3": "0026",
+      "comment": "AWACS"
+    },
+    {
+      "mode3": "1722",
+      "comment": "Boom Tanker"
+    },
+    {
+      "mode3": "1726",
+      "comment": "Basket Tanker"
+    },
+    {
+      "mode3": "0060",
+      "comment": "APP #1 - BS1"
+    },
+    {
+      "mode3": "0061",
+      "comment": "APP #1 - BS1"
+    },
+    {
+      "mode3": "0062",
+      "comment": "APP #1 - BS1"
+    },
+    {
+      "mode3": "0063",
+      "comment": "APP #1 - BS1"
+    },
+    {
+      "mode3": "0064",
+      "comment": "APP #1 - TS1"
+    },
+    {
+      "mode3": "0065",
+      "comment": "APP #1 - TS1"
+    },
+    {
+      "mode3": "0066",
+      "comment": "APP #1 - TS1"
+    },
+    {
+      "mode3": "0067",
+      "comment": "APP #1 - TS1"
+    },
+    {
+      "mode3": "0070",
+      "comment": "APP #1 - RCS1"
+    },
+    {
+      "mode3": "0071",
+      "comment": "APP #1 - RCS2"
+    },
+    {
+      "mode3": "0072",
+      "comment": "APP #1 - RCS3"
+    },
+    {
+      "mode3": "0073",
+      "comment": "APP #1 - RCS4"
+    },
+    {
+      "mode3": "0074",
+      "comment": "APP #1 - TD1"
+    },
+    {
+      "mode3": "0075",
+      "comment": "APP #1 - TD2"
+    },
+    {
+      "mode3": "0076",
+      "comment": "APP #1 - TD3"
+    },
+    {
+      "mode3": "0077",
+      "comment": "APP #1 - TD4"
+    },
+    {
+      "mode3": "0050",
+      "comment": "APP #1 - RC1"
+    },
+    {
+      "mode3": "0051",
+      "comment": "APP #1 - RC2"
+    },
+    {
+      "mode3": "0052",
+      "comment": "APP #1 - RC3"
+    },
+    {
+      "mode3": "0053",
+      "comment": "APP #1 - RC4"
+    },
+    {
+      "mode3": "1601",
+      "comment": "GND ABM #1"
+    },
+    {
+      "mode3": "1602",
+      "comment": "GND ABM #1"
+    },
+    {
+      "mode3": "1603",
+      "comment": "GND ABM #1"
+    },
+    {
+      "mode3": "1604",
+      "comment": "GND ABM #1"
+    },
+    {
+      "mode3": "1701",
+      "comment": "GND ABM #2"
+    },
+    {
+      "mode3": "1702",
+      "comment": "GND ABM #2"
+    },
+    {
+      "mode3": "1703",
+      "comment": "GND ABM #2"
+    },
+    {
+      "mode3": "1704",
+      "comment": "GND ABM #2"
+    },
+    {
+      "mode3": "1801",
+      "comment": "GND ABM #3"
+    },
+    {
+      "mode3": "1802",
+      "comment": "GND ABM #3"
+    },
+    {
+      "mode3": "1803",
+      "comment": "GND ABM #3"
+    },
+    {
+      "mode3": "1804",
+      "comment": "GND ABM #3"
+    },
+    {
+      "mode3": "3000",
+      "comment": "A2G"
+    },
+    {
+      "mode3": "3100",
+      "comment": "A2G"
+    },
+    {
+      "mode3": "3200",
+      "comment": "A2G"
+    },
+    {
+      "mode3": "3300",
+      "comment": "A2G"
+    },
+    {
+      "mode3": "3400",
+      "comment": "A2G"
+    },
+    {
+      "mode3": "3500",
+      "comment": "A2G"
+    },
+    {
+      "mode3": "3600",
+      "comment": "A2G"
+    },
+    {
+      "mode3": "3700",
+      "comment": "A2G"
+    },
+    {
+      "mode3": "4000",
+      "comment": "Multirole"
+    },
+    {
+      "mode3": "4100",
+      "comment": "Multirole"
+    },
+    {
+      "mode3": "4200",
+      "comment": "Multirole"
+    },
+    {
+      "mode3": "4300",
+      "comment": "Multirole"
+    },
+    {
+      "mode3": "4400",
+      "comment": "Multirole"
+    },
+    {
+      "mode3": "4500",
+      "comment": "Multirole"
+    },
+    {
+      "mode3": "4600",
+      "comment": "Multirole"
+    },
+    {
+      "mode3": "4700",
+      "comment": "Multirole"
+    },
+    {
+      "mode3": "5000",
+      "comment": "A2A"
+    },
+    {
+      "mode3": "5100",
+      "comment": "A2A"
+    },
+    {
+      "mode3": "5200",
+      "comment": "A2A"
+    },
+    {
+      "mode3": "5300",
+      "comment": "A2A"
+    },
+    {
+      "mode3": "5400",
+      "comment": "A2A"
+    },
+    {
+      "mode3": "5500",
+      "comment": "A2A"
+    },
+    {
+      "mode3": "5600",
+      "comment": "A2A"
+    },
+    {
+      "mode3": "5700",
+      "comment": "A2A"
+    },
+    {
+      "mode3": "6666",
+      "comment": "SAR Ops"
+    },
+    {
+      "mode3": "0020",
+      "comment": "MEDEVAC"
+    },
+    {
+      "mode3": "7777",
+      "comment": "QRA"
+    },
+    {
+      "mode3": "0033",
+      "comment": "Ferry"
+    },
+    {
+      "mode3": "0026",
+      "comment": "AI AEW"
+    },
+    {
+      "mode3": "1400",
+      "comment": "AI Air Defence"
+    },
+    {
+      "mode3": "7000",
+      "comment": "AI Civilian"
+    },
+    {
+      "mode3": "2000",
+      "comment": "Rotary"
+    },
+    {
+      "mode3": "2100",
+      "comment": "Rotary"
+    },
+    {
+      "mode3": "2200",
+      "comment": "Rotary"
+    },
+    {
+      "mode3": "2300",
+      "comment": "Rotary"
+    },
+    {
+      "mode3": "2400",
+      "comment": "Rotary"
+    },
+    {
+      "mode3": "2500",
+      "comment": "Rotary"
+    },
+    {
+      "mode3": "2600",
+      "comment": "Rotary"
+    },
+    {
+      "mode3": "2700",
+      "comment": "Rotary"
+    },
+    {
+      "mode1": "11",
+      "classification": {
+        "classification": "friend",
+        "dimension": "air",
+        "sub_dimension": "fighter"
+      }
+    },
+    {
+      "mode1": "12",
+      "classification": {
+        "classification": "friend",
+        "dimension": "air",
+        "sub_dimension": "fighter_bomber"
+      }
+    },
+    {
+      "mode1": "13",
+      "classification": {
+        "classification": "friend",
+        "dimension": "air",
+        "sub_dimension": "sead"
+      }
+    }
+  ]
+}

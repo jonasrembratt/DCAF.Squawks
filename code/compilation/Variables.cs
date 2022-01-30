@@ -6,15 +6,16 @@ namespace DCAF.Squawks
 {
     public class Variables
     {
-        const char Qualifier1 = '$';
-        const char Qualifier2 = '(';
+        const string Qualifier = "$(";
+        // const char Qualifier1 = '$'; obsolete
+        // const char Qualifier2 = '(';
         const char Suffix = ')';
         
         readonly Dictionary<string,string>? _dictionary;
 
         internal string? SubstituteAll(string? text, IDictionary<string, Counter> counters)
         {
-            if (_dictionary is null || text is null)
+            if (/*_dictionary is null || obsolete */ text is null)
                 return text;
 
             var containsCounters = text.Contains(Counter.ReferenceQualifier);
@@ -99,9 +100,9 @@ namespace DCAF.Squawks
             }
         }
 
-        bool isVariable(IReadOnlyList<char> ca, ref int index, out string? value)
+        bool isVariable(char[] ca, ref int index, out string? value)
         {
-            if (index >= ca.Count - 3 || ca[index] != Qualifier1 || ca[index+1] != Qualifier2)
+            if (!ca.IsToken(index, Qualifier))
             {
                 value = null;
                 return false;
@@ -109,7 +110,7 @@ namespace DCAF.Squawks
 
             var sb = new StringBuilder();
             var isEmpty = true;
-            for (var i = index+2; i < ca.Count; i++)
+            for (var i = index+2; i < ca.Length; i++)
             {
                 var c = ca[i];
                 if (c == Suffix)
@@ -122,7 +123,7 @@ namespace DCAF.Squawks
                     }
 
                     var key = sb.ToString();
-                    if (_dictionary!.TryGetValue(key, out value))
+                    if (_dictionary is {} && _dictionary.TryGetValue(key, out value))
                     {
                         // send back the variable value ...
                         index += key.Length + 2;
@@ -140,7 +141,7 @@ namespace DCAF.Squawks
             } 
             
             // reached end of text without finding a ')' suffix; return everything as-is ...
-            value = $"{Qualifier1}{Qualifier2}{sb}";
+            value = $"{Qualifier}{sb}";
             return false;
         }
 
