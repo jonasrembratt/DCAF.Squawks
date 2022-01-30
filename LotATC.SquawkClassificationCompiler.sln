@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_lib", "_lib", "{D84B80A3-DB89-4305-8B98-2660D20EF9E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cli-compiler", "code\cli-compiler.csproj", "{63E15D11-E794-407C-836B-E5668E638616}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetraPak.Common", "TetraPak.Common\TetraPak.Common\TetraPak.Common.csproj", "{96C439E9-5EDF-4A48-BCBE-53CDD03608E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_doc", "_doc", "{B530B38C-EAA1-4734-A300-0F9F90D89287}"
+	ProjectSection(SolutionItems) = preProject
+		_doc\templates.md = _doc\templates.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_lines", "_lines", "{43A19F45-AF9B-4913-B3E8-1634DC8523A0}"
+	ProjectSection(SolutionItems) = preProject
+		_files\dcaf.template.json5 = _files\dcaf.template.json5
+		_files\template.2.json = _files\template.2.json
+		_files\template.3.json = _files\template.3.json
+		_files\template.4.json5 = _files\template.4.json5
+		_files\template.counters-in-identifiers.json5 = _files\template.counters-in-identifiers.json5
+		_files\template.invalid.json = _files\template.invalid.json
+		_files\template.json = _files\template.json
+		_files\values.invalid.json = _files\values.invalid.json
+		_files\values.json = _files\values.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_files", "_files", "{6A5BC12A-2128-4630-B6FA-F73D623F4CC2}"
+	ProjectSection(SolutionItems) = preProject
+		_files\dcaf.template.json5 = _files\dcaf.template.json5
+		_files\template.2.json = _files\template.2.json
+		_files\template.3.json = _files\template.3.json
+		_files\template.4.json5 = _files\template.4.json5
+		_files\template.counters-in-identifiers.json5 = _files\template.counters-in-identifiers.json5
+		_files\template.invalid.json = _files\template.invalid.json
+		_files\template.json = _files\template.json
+		_files\values.invalid.json = _files\values.invalid.json
+		_files\values.json = _files\values.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63E15D11-E794-407C-836B-E5668E638616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63E15D11-E794-407C-836B-E5668E638616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63E15D11-E794-407C-836B-E5668E638616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63E15D11-E794-407C-836B-E5668E638616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96C439E9-5EDF-4A48-BCBE-53CDD03608E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C439E9-5EDF-4A48-BCBE-53CDD03608E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C439E9-5EDF-4A48-BCBE-53CDD03608E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C439E9-5EDF-4A48-BCBE-53CDD03608E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{96C439E9-5EDF-4A48-BCBE-53CDD03608E7} = {D84B80A3-DB89-4305-8B98-2660D20EF9E7}
+	EndGlobalSection
+EndGlobal

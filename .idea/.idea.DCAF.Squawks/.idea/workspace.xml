@@ -8,11 +8,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e392ea37-3440-4f53-82a3-3b910f446d04" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/_files/template.invalid.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_files/values.invalid.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_doc/templates.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_files/dcaf.template.json5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_files/template.3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_files/template.4.json5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_files/template.counters-in-identifiers.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DCAF.Squawks/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DCAF.Squawks/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DCAF.Squawks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DCAF.Squawks/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/code/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DCAF.Squawks.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DCAF.Squawks.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_ActorToken.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_ActorToken.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_BasicAuthCredentials.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_BasicAuthCredentials.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_BearerToken.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_BearerToken.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Caching_SimpleCache.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Caching_SimpleCache.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Caching_SimpleCacheConfig.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Caching_SimpleCacheConfig.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Caching_SimpleTimeLimitedRepositoryOptions.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Caching_SimpleTimeLimitedRepositoryOptions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_CommandLineArgs.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_CommandLineArgs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_ConfigurationHelper.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_ConfigurationHelper.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Configuration_ConfigurationSection.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Configuration_ConfigurationSection.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Credentials.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Credentials.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_DictionaryExtensions.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_DictionaryExtensions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_DynamicEntities_DynamicEntity.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_DynamicEntities_DynamicEntity.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_DynamicEntities_DynamicPath.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_DynamicEntities_DynamicPath.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_IStringValue.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_IStringValue.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_IdentityConflictException.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_IdentityConflictException.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_BasicLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_BasicLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_ILog.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_ILog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_LoggerExtensions.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_LoggerExtensions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_StateDump.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_StateDump.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_StateDumpContext.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_StateDumpContext.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_TextLogEventArgs.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Logging_TextLogEventArgs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_MultiStringValue.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_MultiStringValue.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_MultiStringValueHelper.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_MultiStringValueHelper.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Outcome.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Outcome.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Outcome_T_.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Outcome_T_.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_RandomString.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_RandomString.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_ReadChunk.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_ReadChunk.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Serialization_StreamHelper.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Serialization_StreamHelper.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_StringHelper.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_StringHelper.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_StringValueBase.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_StringValueBase.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_TaskHelper.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_TaskHelper.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_TypeHelper.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_TypeHelper.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Xml_XmlPatcher.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_Xml_XmlPatcher.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_files_FileSystemHelper.md" beforeDir="false" afterPath="$PROJECT_DIR$/TetraPak.Common/TetraPak.Common/_docs/_code/TetraPak_files_FileSystemHelper.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/DCAF.Squawks.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/code/cli-compiler.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/DCAF.Squawks.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/code/cli-compiler.csproj.DotSettings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/serialization/LotAtcSquawksParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/code/serialization/LotAtcSquawksParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/serialization/SquawkRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/code/serialization/SquawkRange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/serialization/Variables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/code/serialization/Variables.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +65,49 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/code/serialization/Variables.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -29,6 +115,7 @@
     <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectId" id="23uYPtZ60GxHGscDPl9IIGpFYXb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,18 +125,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.36895388" />
     <property name="android.sdk.path" value="D:/Android/android-sdk" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
     <option name="showLigatures" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.DCAF.Squawks !! invalid template JSON file">
+  <component name="RunManager" selected=".NET Project.DCAF.Squawks - all args">
     <configuration name="Self-contained binary MacOS" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" delete_existing_files="true" include_native_libs_for_self_extract="true" platform="Any CPU" produce_single_file="true" ready_to_run="true" runtime="osx-x64" target_folder="$PROJECT_DIR$/code/bin/Release/net5.0/publish" target_framework="net5.0" uuid_high="7197136010995843196" uuid_low="-8976829203594639850" />
       <method v="2" />
@@ -60,13 +148,13 @@
     </configuration>
     <configuration name="DCAF.Squawks - all args" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/code/bin/Debug/net5.0/dcafsquawks.dll" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/_files/template.json&quot; -i -v &quot;$PROJECT_DIR$/_files/values.json&quot; -w &quot;$USER_HOME$/Desktop/lotatc_dcaf.json&quot; -o" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/_files/template.counters-in-identifiers.json5&quot; -i -v &quot;$PROJECT_DIR$/_files/values.json&quot; -w &quot;$USER_HOME$/Desktop/lotatc_dcaf.json&quot; -o" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/bin/Debug/net5.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/cli-compiler.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -84,7 +172,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/cli-compiler.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -102,7 +190,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/cli-compiler.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -120,7 +208,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/cli-compiler.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -138,7 +226,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/cli-compiler.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -156,7 +244,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/cli-compiler.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -174,7 +262,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/cli-compiler.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -192,7 +280,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/cli-compiler.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -210,7 +298,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/cli-compiler.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -228,7 +316,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/cli-compiler.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -246,7 +334,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/DCAF.Squawks.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/code/cli-compiler.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -282,7 +370,8 @@
       <updated>1642585418851</updated>
       <workItem from="1642585434045" duration="877000" />
       <workItem from="1642591361994" duration="7288000" />
-      <workItem from="1642724135160" duration="7643000" />
+      <workItem from="1642724135160" duration="8381000" />
+      <workItem from="1643388008328" duration="26352000" />
     </task>
     <servers />
   </component>
@@ -305,50 +394,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/code/Program.cs</url>
-          <line>110</line>
-          <properties documentPath="$PROJECT_DIR$/code/Program.cs" initialLine="107" containingFunctionPresentation="method 'readValuesAsync'">
-            <startOffsets>
-              <option value="3788" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3789" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/code/Program.cs</url>
-          <line>106</line>
-          <properties documentPath="$PROJECT_DIR$/code/Program.cs" initialLine="109" containingFunctionPresentation="method 'readValuesAsync'">
-            <startOffsets>
-              <option value="3649" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3650" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/code/Program.cs</url>
-          <line>52</line>
-          <properties documentPath="$PROJECT_DIR$/code/Program.cs" initialLine="54" containingFunctionPresentation="method 'Main'">
-            <startOffsets>
-              <option value="1561" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1562" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using TetraPak.DynamicEntities;
@@ -17,7 +19,7 @@ namespace DCAF.Squawks
             if (!file.Exists)
                 throw new FileNotFoundException($"File was not found: {file.FullName}");
 
-            await using var stream = file.OpenRead();
+            await using var stream = await loadAndPreprocessJsonAsync(file);
             try
             {
                 var root = await JsonSerializer.DeserializeAsync<LotAtcRoot>(stream, new JsonSerializerOptions
@@ -36,6 +38,85 @@ namespace DCAF.Squawks
             }
         }
 
+        static async Task<Stream> loadAndPreprocessJsonAsync(FileSystemInfo file)
+        {
+            const string SingleLineCommentQualifier = "//";
+            const string MultiLineCommentQualifierPrefix = "/*";
+            const string MultiLineCommentQualifierSuffix = "*/";
+
+            try
+            {
+                var sb = new StringBuilder();
+                var ca = (await File.ReadAllTextAsync(file.FullName)).ToCharArray();
+                for (var i = 0; i < ca.Length; i++)
+                {
+                    var c = ca[i];
+                    if (c == '\"')
+                    {
+                        eatUntil("\"", true);
+                        continue;
+                    }
+                    
+                    if (isToken(SingleLineCommentQualifier))
+                    {
+                        skipUntil(Environment.NewLine);
+                        continue;
+                    }
+
+                    if (isToken(MultiLineCommentQualifierPrefix))
+                    {
+                        skipUntil(MultiLineCommentQualifierSuffix);
+                        i += MultiLineCommentQualifierSuffix.Length;
+                        continue;
+                    }
+
+                    sb.Append(c);
+
+                    void eatUntil(string terminator, bool include)
+                    {
+                        if (include)
+                        {
+                            sb.Append(ca[i++]);
+                        }
+                        for (; i < ca.Length && !isToken(terminator); i++)
+                        {
+                            sb.Append(ca[i]);
+                        }
+                        if (include)
+                        {
+                            sb.Append(ca[i]);
+                        }
+                    }
+                    
+                    void skipUntil(string terminator)
+                    {
+                        for (; i < ca.Length && !isToken(terminator); i++) {}
+                    }
+
+                    bool isToken(string pattern)
+                    {
+                        var pa = pattern.ToCharArray();
+                        for (var j = 0; j < pa.Length && j < ca.Length; j++)
+                        {
+                            if (ca[i + j] != pa[j])
+                                return false;
+                        }
+
+                        return true;
+                    }
+                }
+
+                var byteArray = Encoding.ASCII.GetBytes(sb.ToString());
+                return new MemoryStream(byteArray);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            
+        }
+
         static string toJson(LotAtcRoot root) => JsonSerializer.Serialize(root, new JsonSerializerOptions
         {
             WriteIndented = true
@@ -49,7 +130,7 @@ namespace DCAF.Squawks
                 : new List<Transponder>();
             return new LotAtcRoot
             {
-                Comments = @"File was processed by DCAF LotATC squawk parser (please contact Jonas ""Wife"" Rembratt for issues or questions)",
+                Comments = @"File was processed by DCAF LotATC squawk compiler (please contact Jonas ""Wife"" Rembratt for issues or questions)",
                 Enable = rootIn.Enable,
                 Transponders = transponders
             };
@@ -57,12 +138,13 @@ namespace DCAF.Squawks
             List<Transponder> processTransponders()
             {
                 var list = new List<Transponder>();
+                var noCounters = new Dictionary<string, Counter>();
                 foreach (var transponder in rootIn.Transponders)
                 {
                     var mode3 = transponder.Mode3;
                     if (string.IsNullOrEmpty(mode3) || !isRange(mode3, out var range))
                     {
-                        list.Add(substituteVariables(transponder));
+                        list.Add(substituteDynamicValues(transponder, noCounters));
                         continue;
                     }
             
@@ -70,7 +152,7 @@ namespace DCAF.Squawks
                     for (var i = range.From; i <= range.To; i += range.Increment)
                     {
                         var intValue = i;
-                        var clone = substituteVariables(transponder.Clone<Transponder>());
+                        var clone = substituteDynamicValues(transponder.Clone<Transponder>(), range.Counters, "mode3");
                         clone.Mode3 = intValue.ToString("0000");
                         list.Add(clone);
                     }
@@ -80,14 +162,19 @@ namespace DCAF.Squawks
             }
         }
 
-        T substituteVariables<T>(T entity) where T : DynamicEntity
+        T substituteDynamicValues<T>(T entity, IDictionary<string,Counter> counters, params string[] ignoreKeys) 
+        where T : DynamicEntity
         {
+            var ignoreHash = ignoreKeys.ToHashSet();
             foreach (var (key, value) in entity)
             {
+                if (ignoreHash.Contains(key))
+                    continue;
+                
                 entity[key] = value switch
                 {
-                    DynamicEntity de => substituteVariables(de),
-                    string s => _variables.SubstituteAll(s),
+                    DynamicEntity de => substituteDynamicValues(de, counters),
+                    string s => _variables.SubstituteAll(s, counters),
                     _ => value
                 };
             }
@@ -107,8 +194,8 @@ namespace DCAF.Squawks
         
             var sepAt = squawk.IndexOf(Separator, StringComparison.Ordinal);
             var from = squawk[..sepAt].Trim();
-            var to = squawk[(sepAt + 1)..].Trim(); 
-            var increment = parseIncrement();
+            var to = squawk[(sepAt + 1)..].Trim();
+            var parsed = parseIncrementAndCounters();
             if (!int.TryParse(from.Trim(), out var intFrom) || !isValidSquawk(intFrom))
                 throw invalidSquawkRange(squawk);
         
@@ -119,22 +206,35 @@ namespace DCAF.Squawks
             {
                 From = intFrom,
                 To = intTo,
-                Increment = increment
+                Increment = parsed.increment,
+                Counters = parsed.counters.ToDictionary(i => i.Name)
             };
             return true;
         
-            int parseIncrement()
+            (int increment, Counter[] counters) parseIncrementAndCounters()
             {
+                var countersAt = to.IndexOf("#(", StringComparison.Ordinal);
+                Counter[] counters;
+                if (countersAt != -1)
+                {
+                    counters = Counter.Parse(to[countersAt..]);
+                    to = to[..countersAt];
+                }
+                else
+                {
+                    counters = Array.Empty<Counter>();
+                }
+                
                 var split = to.Split('+', StringSplitOptions.RemoveEmptyEntries);
                 if (split.Length == 1)
-                    return 1;
+                    return (1, counters);
 
                 to = split[0].Trim();
                 var text = split[1].Trim();
                 if (!int.TryParse(text, out var inc))
                     throw invalidSquawkRangeIncrement(squawk);
         
-                return Math.Abs(inc);
+                return (Math.Abs(inc), counters);
             }
             
         }

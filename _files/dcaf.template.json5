@@ -1,0 +1,202 @@
+{
+  "__comments": "File was processed by DCAF LotATC squawk compiler (please contact Jonas \u0022Wife\u0022 Rembratt for issues or questions)",
+  "enable": true,
+  "transponders": [
+    {
+      "mode1": "7001",
+      "comment": "VFR"
+    },
+    {
+      "mode3": "7010",
+      "comment": "Circuit"
+    },
+    {
+      "mode3": "7200",
+      "comment": "Shipborne Conspicuity"
+    },
+    {
+      "mode3": "1000",
+      "comment": "FAM Flight"
+    },
+    {
+      "mode3": "1001",
+      "comment": "Flying Ability Assessment"
+    },
+    {
+      "mode3": "1002",
+      "comment": "Visual Circuits Assessment"
+    },
+    {
+      "mode3": "1003",
+      "comment": "Departures \u0026 Arrivals Assessment"
+    },
+    {
+      "mode3": "1004",
+      "comment": "Formation Flight"
+    },
+    {
+      "mode3": "1005",
+      "comment": "Aerial refueling (DAY Assessment)"
+    },
+    {
+      "mode3": "1006",
+      "comment": "Aerial refueling (NIGHT Assessment)"
+    },
+    {
+      "mode3": "1007",
+      "comment": "Weaponeering Practice"
+    },
+    {
+      "mode3": "1010",
+      "comment": "Night Ops/Speechless Practice"
+    },
+    {
+      "mode3": "1011",
+      "comment": "Combat Readiness Assessment"
+    },
+    {
+      "mode3": "1012",
+      "comment": "Generic Air-to-Ground Sortie"
+    },
+    {
+      "mode3": "1013",
+      "comment": "Generic Air-to-Surface"
+    },
+    {
+      "mode3": "1014",
+      "comment": "Generic Air-to-Air Sortie"
+    },
+    
+    // Aerodromes
+    {
+      "mode3": "7040 - 7047",
+      "comment": "$(Aerodrome #1)"
+    },
+    {
+      "mode3": "7050 - 7057",
+      "comment": "$(Aerodrome #2)"
+    },
+    {
+      "mode3": "7060 - 7067",
+      "comment": "$(Aerodrome #3)"
+    },
+
+    {
+      "mode3": "0026",
+      "comment": "AWACS"
+    },
+    {
+      "mode3": "1722",
+      "comment": "Boom Tanker"
+    },
+    {
+      "mode3": "1726",
+      "comment": "Basket Tanker"
+    },
+    
+    // Approach
+    {
+      "mode3": "0060 - 0067",
+      "comment": "$(APP #1) - BS#1"
+    },
+    {
+      "mode3": "0070 - 0077",
+      "comment": "$(APP #1) - RCS#1"
+    },
+    {
+      "mode3": "0050 - 0053",
+      "comment": "$(APP #1) - TD#1"
+    },
+
+    // Ground ABM
+    {
+      "mode3": "1601 - 1604",
+      "comment": "$(GND ABM #1)"
+    },
+    {
+      "mode3": "1701 - 1704",
+      "comment": "$(GND ABM #2)"
+    },
+    {
+      "mode3": "1801 - 1804",
+      "comment": "$(GND ABM #3)"
+    },
+
+    // Air to Ground
+    {
+      "mode3": "3000 - 3700 + 100",
+      "comment": "A2G"
+    },
+
+    // Multirole
+    {
+      "mode3": "4000 - 4700 + 100",
+      "comment": "Multirole"
+    },
+
+     // Air to Air
+    {
+      "mode3": "5000 - 5700 + 100",
+      "comment": "A2A"
+    },
+
+    {
+      "mode3": "6666",
+      "comment": "SAR Ops"
+    },
+    {
+      "mode3": "0020",
+      "comment": "MEDEVAC"
+    },
+    {
+      "mode3": "7777",
+      "comment": "QRA"
+    },
+    {
+      "mode3": "0033",
+      "comment": "Ferry"
+    },
+    {
+      "mode3": "0026",
+      "comment": "AI AEW"
+    },
+    {
+      "mode3": "1400",
+      "comment": "AI Air Defence"
+    },
+    {
+      "mode3": "7000",
+      "comment": "AI Civilian"
+    },
+    {
+      "mode3": "2000 - 2700 + 100",
+      "comment": "Rotary"
+    },
+
+    // Mode 1
+    {
+      "mode1": "11",
+      "classification": {
+        "classification": "friend",
+        "dimension": "air",
+        "sub_dimension": "fighter"
+      }
+    },
+    {
+      "mode1": "12",
+      "classification": {
+        "classification": "friend",
+        "dimension": "air",
+        "sub_dimension": "fighter_bomber"
+      }
+    },
+    {
+      "mode1": "13",
+      "classification": {
+        "classification": "friend",
+        "dimension": "air",
+        "sub_dimension": "sead"
+      }
+    }
+  ]
+}

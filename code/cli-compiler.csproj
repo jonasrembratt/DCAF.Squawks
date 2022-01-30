@@ -5,8 +5,8 @@
         <TargetFramework>net5.0</TargetFramework>
         <LangVersion>default</LangVersion>
         <Nullable>enable</Nullable>
-        <AssemblyName>dcafsquawks</AssemblyName>
         <RootNamespace>DCAF.Squawks</RootNamespace>
+        <AssemblyName>lascc</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>
