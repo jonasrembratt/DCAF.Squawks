@@ -17,10 +17,10 @@ file you need, ready to be uploaded to your LotATC server.
 
 ## Basics
 
-The squawk compiler takes a LotATC JSON squawk classification JSON
-file but allows for special syntax for ranges, to reduce the work
-involved when creating your squawk classifications. That syntax is 
-very simple. Here's an example:
+The squawk compiler expects a LotATC JSON squawk classification JSON
+file as its input but allows for special syntax for squawk ranges and variables, 
+to reduce the work involved when creating your squawk classifications. 
+The syntax is very simple. Here's an example:
 
 ```json5
 {
@@ -32,19 +32,28 @@ very simple. Here's an example:
       "comment": "VFR"
     },
     {
-      "mode3": "7040-7047",
-      "comment": "Aerodrome #1"
+      "mode3": "7040 - 7047",      // <-- Squawk range
+      "comment": "$(Aerodrome #0)" // <-- variable
     }
   ]
 }
 
 ```
-In the above example there are two blocks: The first one simply expresses
-squawk code 7001 adding a comment ("VFR") for it. That is fully supported
-by LotATC already so the compiler will simply leave it as it finds it.
+In the above example there are two squawk classifications: 
+The first one simply expresses squawk code 7001 adding a comment ("VFR") for it. 
+This is fully supported by LotATC already so the compiler will simply leave it 
+as it finds it.
 
 The second block is a squawk code *range* that starts with squawk code 7040
-and ends with 7047. The compiler will create eight blocks from this 
+and ends with 7047. The comment value specifies a *variable*, 
+that can be resolved if the compiler have access to a "data" file that declares
+a values for that variable. 
+
+> For now we'll just assume there's no data for the variable. 
+> We will talk more about variables later, in 
+> [Template file with variables](#template-file-with-variables) section.
+
+The compiler will create eight blocks from this 
 range, like so:
 
 ```json5
@@ -58,47 +67,47 @@ range, like so:
     },
     {
       "mode3": "7040-7047",
-      "comment": "Aerodrome #1"
+      "comment": "Aerodrome #0"
     },
     {
       "mode3": "7041",
-      "comment": "Aerodrome #1"
+      "comment": "Aerodrome #0"
     },
     {
       "mode3": "7042",
-      "comment": "Aerodrome #1"
+      "comment": "Aerodrome #0"
     },
     {
       "mode3": "7043",
-      "comment": "Aerodrome #1"
+      "comment": "Aerodrome #0"
     },
     {
       "mode3": "7044",
-      "comment": "Aerodrome #1"
+      "comment": "Aerodrome #0"
     },
     {
       "mode3": "7045",
-      "comment": "Aerodrome #1"
+      "comment": "Aerodrome #0"
     },
     {
       "mode3": "7046",
-      "comment": "Aerodrome #1"
+      "comment": "Aerodrome #0"
     },
     {
       "mode3": "7047",
-      "comment": "Aerodrome #1"
+      "comment": "Aerodrome #0"
     }
   ]
 }
 ```
 
-If you needed the range to increment differently you could add an 
+If you needed the squawk range to increment differently you could add an 
 incrementation value to the range declaration, like in this example:
 
 ```json5
   {
     "mode3": "7040 - 7077 +10",
-    "comment": "Aerodrome #1"
+    "comment": "$(Aerodrome #0)"
   }
 ```
 
@@ -108,39 +117,39 @@ That would instead have created this sequence of squawk classifications:
 [
   {
     "mode3": "7040",
-    "comment": "Aerodrome #1"
+    "comment": "Aerodrome #0"
   },
   {
     "mode3": "7050",
-    "comment": "Aerodrome #1"
+    "comment": "Aerodrome #0"
   },
   {
     "mode3": "7060",
-    "comment": "Aerodrome #1"
-  },
-    // and so on...
+    "comment": "Aerodrome #0"
+  }, 
+  // and so on...
 ]
 ```
 
-So, creating squawk ranges should be pretty straight forward. 
-But there is a problem: The compiler just reproduced the comment 
-from the template squawk range section to all the resulting blocks. 
-Very likely you would have wanted the aerodromes to be numbered, like in 
+So, as you can see, declaring squawk ranges is pretty straight forward. 
+But how about that "Aerodrome #0" value? The compiler just reproduced 
+the comment from the template squawk range section to all the resulting blocks. 
+But maybe you wanted them to also be incremented, like in 
 this short snippet:
 
 ```json5
 [
   { 
     "mode3": "7040",
-    "comment": "Aerodrome #1"
+    "comment": "Aerodrome #0"
   },
   {
     "mode3": "7041", 
-    "comment": "Aerodrome #2"
+    "comment": "Aerodrome #1"
   },
   {
     "mode3": "7042",
-    "comment": "Aerodrome #3"
+    "comment": "Aerodrome #2"
   },
   // and so on...
 ]
@@ -148,33 +157,42 @@ this short snippet:
 
 ## Counters
 
-The squawk compiler allows for defining counters within a declared 
-squawk range, using this syntax: `'#('<counter id> '=' <start> ['+'<increment>])`.
+The squawk compiler also lets tou define counters for a declared 
+squawk range, using this syntax: `'#('<counter id> ['=' <start> ['+'<increment>]])`.
+
+Or, in plain English:
+
+*A hash and bracket - '#(' - followed by the name of the counter. 
+Then, optionally, a start value (gets set to zero if omitted) and,
+also optionally, an increment value (gets set to one if omitted). 
+End the counter with a closing bracket: ')'.*
 
 Here's how you would have written the above range to achieve incrementing
 the 'x' in "Aerodrome #x":
 
-```json
+```json5
   {
-    "mode3": "7040-7047 #(x = 1 + 1)",
+    "mode3": "7040-7047 #(x)", 
       "comment": "Aerodrome #=(x)"
   }
 ```
 
-The `#(x = 1 + 1)` is interpreted by the compiler as: for this range; 
-"define '`x`' as a counter, starting with 1 and incremented by 1 for 
-every squawk code". So, if you wanted to start with one and increment
-by 10 you would instead have written `#(x = 10 + 10)`, which would 
-have named the aerodromes "Aerodrome #10", "Aerodrome #20", "Aerodrome #30"
-and so on. The increment element is optional, defaulting to one (1) when
-omitted.
+The `#(x)` is interpreted by the compiler as: for this range; 
+add counter '`x`'. As no start or increment value 
+was specified; set to zero and one respectively.
 
-You might need multiple counters in a range, like in this example:
+So, if you wanted to start with ten and also increment
+by ten you would instead have written `#(x = 10 + 10)`, which would 
+have named the aerodromes "Aerodrome #10", "Aerodrome #20", "Aerodrome #30"
+and so on. As you might imagine, `#(c+10)` would have produced
+the series "0", "10", "20" ... and so on.
+
+You might want multiple counters for a range, like in this example:
 
 ```json
   {
-    "mode3": "7040-7047 #(unit = 1), #(tail = 400 + 10)",
-    "comment": "CAP - Devil 1-=(unit) (tail no. =(tail))"
+    "mode3": "7040-7047 #(unit), #(tail = 400 + 10)",
+    "comment": "CAP - Roman 1-=(unit) (tail no. =(tail))"
   }
 ```
 
@@ -184,15 +202,15 @@ This would have been compiled into this output:
 [
   {
     "mode3": "7040",
-    "comment": "CAP - Devil 1-1 (tail no. 400)"
+    "comment": "CAP - Roman 1-1 (tail no. 400)"
   },
   {
     "mode3": "7041",
-    "comment": "CAP - Devil 1-2 (tail no. 410)"
+    "comment": "CAP - Roman 1-2 (tail no. 410)"
   },
   {
     "mode3": "7041",
-    "comment": "CAP - Devil 1-3 (tail no. 420)"
+    "comment": "CAP - Roman 1-3 (tail no. 420)"
   }
   // and so on...
 ]
@@ -200,14 +218,50 @@ This would have been compiled into this output:
 
 ## Comments
 
-The squawk compiler currently supports JSON 5 single line comments,
-like in the above examples. The single line comment starts with "`//`"
-and will automatically be omitted in the output (until LotATC) supports
-JSON 5.
+The squawk compiler currently supports JSON 5 comments
+like in the above examples. There are two types of comments: 
+Single line and multiline.
 
-Multi-line JSON 5 comments are currently not supported.
+All comments are always removed from the output result.
 
-## Advanced
+### Single line comments
+
+Single line comment starts with "`//`" and goes on till the end of that
+line:
+
+```json5
+
+[
+  {
+    "mode3": "7040", // this comment will be removed and ends here.
+    "comment": "CAP - Roman 1-1 (tail no. 400)"
+  }
+]
+```
+
+### Multiline comments
+
+Multiline comments start with "`/*`" and ends with "`*/`",
+on the same line or (usually) on a different line.
+
+```json5
+
+[
+  /* 
+     +------------------------------------+
+     |  Multiline comments can be useful  |
+     |  as they allow for more text and   |
+     |  attracts attention                | 
+     +------------------------------------+ 
+  */
+  {
+    "mode3": "7040", 
+    "comment": "CAP - Roman 1-1 (tail no. 400)"
+  }
+]
+```
+
+## Advanced templating
 
 Consider this squawk range again:
 
@@ -215,32 +269,33 @@ Consider this squawk range again:
 [  
   { 
     "mode3": "7040",
-    "comment": "Aerodrome #1"
+    "comment": "Aerodrome #0"
   },
   {
     "mode3": "7041",
-    "comment": "Aerodrome #2"
+    "comment": "Aerodrome #1"
   },
   {
     "mode3": "7042",
-    "comment": "Aerodrome #3"
+    "comment": "Aerodrome #2"
   },
   // and so on...
 ]
 ```
 
-That might be great if all controllers know which aerodrome is #1, #2 and #3 
-but, maybe, it would be even better if the actual aerodrome names could 
-be included in the squawk comment instead. That, of course, might change
+That might be great if all controllers know which aerodrome is #0, #1, #2
+etc.but, maybe, it would be even better if the actual aerodrome names could 
+be included in the squawk comment. That, of course, might change
 from one map to another, or even between events on the same map.
 
-To allow for more details the squawk compiler can take a second "values" 
+To allow for more details the squawk compiler can take a second "data" 
 file as its input to resolve dynamic values. Here's how you could 
 achieve this by modifying the original squawk range declaration example:
 
-## Example template file with variables
+## Template file with variables
 
-```json
+```json5
+// data.json5
 {
   "__comments":"THIS FILE IS AN EXAMPLE AND WILL NOT BE LOADED BECAUSE enable=false",
   "enable": true,
@@ -250,19 +305,19 @@ achieve this by modifying the original squawk range declaration example:
       "comment": "VFR"
     },
     {
-      "mode3": "7040-7047 #(n = 1)",
-      "comment": "$(Aerodrome #=(x))"
+      "mode3": "7040-7047 #(n)",
+      "comment": "$(Aerodrome #=(n))"
     }
   ]
 }
 
 ```
 
-As we have already seen this would name the aerodromes "Aerodrome #1",
-"Aerodrome #2" and so on. But by surrounding the result inside a
-dynamic value qualifier "$(" and ")" you indicating to the compiler
-that this is a dynamic value, and that it should try and look it up
-in a values file you're supplying. The values file is also a JSON file
+As we have already seen this would name the aerodromes "Aerodrome #0",
+"Aerodrome #1", and so on. But by surrounding the result inside a
+variable qualifier "$(" and ")" you are instructing the compiler
+that this is a variable and that it should try and look it up
+in a data file you're supplying. The data file is also a JSON file
 with a single list of key/value pairs, like this:
 
 ### Example data file
@@ -270,17 +325,17 @@ with a single list of key/value pairs, like this:
 ```json5
 // data-syria.json
 {
-  "Aerodrome #1": "Incirlik AB",
-  "Aerodrome #2": "Ramat David AB",
-  "Aerodrome #3": "Paphos",
-  "AWACS #1": "Magic 1-1",
-  "AWACS #2": "Overlord 1-1",
-  "AWACS #3": "Wizard 1-1",
+  "Aerodrome #0": "Incirlik AB",
+  "Aerodrome #1": "Ramat David AB",
+  "Aerodrome #2": "Paphos",
+  "AWACS #0": "Magic 1-1",
+  "AWACS #1": "Overlord 1-1",
+  "AWACS #2": "Wizard 1-1",
 }
 ```
 By supplying this file to the compiler it will automatically substitute 
-all variables (whatever is found between "$(" and ")") with the corresponding
-value it finds in the values file. For the above examples this is the resulting output:
+all variables with the corresponding value it finds in the data file. 
+For the above examples this is the resulting output:
 
 ```json5
 [
@@ -298,26 +353,25 @@ value it finds in the values file. For the above examples this is the resulting 
   },
   {
     "mode3": "7043",
-    "comment": "Aerodrome #4"
+    "comment": "Aerodrome #3"
   },
   {
     "mode3": "7044",
-    "comment": "Aerodrome #5"
+    "comment": "Aerodrome #4"
   },
     // and so on...
 ]
 ```
 
-The fact that the values are kept in separate files means you a free 
+The fact that the values are kept in separate files means you are free 
 to create very few squawk layout templates, perhaps just one,
-and then recompile it with different values files to suit your
-short term needs.
+and then recompile it with different data files to suit your needs.
 
 Also, please note how some of the above aerodromes didn't get resolved 
 to specific aerodrome names. The reason for that is that they 
-("Aerodrome #4" and above) isn't available in the example values file.
+("Aerodrome #3" and above) aren't available in the example data file.
 When the compiler can't resolve a variable it simply retains its name,
-removing the qualifier tokens (the "$(" and ")").
+removing the qualifier tokens: `$(` and `)` .
 
 ## Running the compiler
 
@@ -333,8 +387,8 @@ are values preceded by the argument identifier:
 
 ### --write (-w)
 
-This value specifies the name of (or path to) the compiled LotATC you want compiled. 
-This is the file you intend to upload to the LotATC server.
+This value specifies the name of (or path to) the LotATC you want to create
+and upload to your LotATC server. 
 
 Example:
 ```
@@ -344,10 +398,10 @@ lascc myLotATC_template.json5 --write myLotATC.json
 
 ### --overwrite (-o)
 
-This is just a flag (so no value is expected) that specifies to the 
-compiler that it should overwrite the output file (see [--write](#--write--w) 
-above) if it already exists. If the output file already exists when you
-run the compiler it will end with an error message unless you add this flag. 
+This is just a flag (no value is expected) that instructs the 
+compiler to always overwrite the output file (see [--write](#--write--w) 
+above) if it already exists. If you omit this flag and the compiler 
+detects that the output file already exists it will end with an error. 
 
 Example:
 ```
@@ -361,12 +415,16 @@ progress. This can be useful for understanding what happens when
 you run the compiler manually (as opposed to being a part of an 
 automated process, such as a DevOps build flow for example).
 
+> NOTE: The compiler currently provides little output but
+> will improve in future updates.
+
 ### --data (-d)
 
 This value specifies the name of (or path to) a data file, to be used
-by the compiler to resolve dynamic values (when included in the template 
-file). As an example, if you place the [example data file (above)](#example-data-file)
-in your compiler folder, along with your [example template file](#example-template-file-with-variables),
+by the compiler to resolve variables. As an example, if you place the 
+[example data file (above)](#example-data-file)
+in your compiler folder, along with your 
+[example template file](#template-file-with-variables),
 this is how you could invoke the compiler:
 
 Example:
@@ -381,11 +439,10 @@ This will produce a list of arguments available and a short explanation.
 
 ## Windows
 
+-- TODO --
+
 ## Mac
 
-
-
-Open a Finder window and proceed to wherever the compile
-
+-- TODO --
 
 [lot-atc-json-document]: https://www.lotatc.com/documentation/client/classification.html#transponder-format

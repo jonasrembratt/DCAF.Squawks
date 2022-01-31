@@ -96,7 +96,7 @@
     // --- Approach ---
     
     {
-      "mode3": "0060-0063 #(x = 1) #(y = 10 +10)",
+      "mode3": "0060-0063 #(x) #(y = 10 +10)",
       "comment": "APP #1 - BS=(x)",
       "test": "Testing Y counter: =(y)"
     },

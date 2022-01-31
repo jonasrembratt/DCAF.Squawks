@@ -3,8 +3,12 @@
   "enable": true,
   "transponders" : [
     {
-      "mode3": "7040-7047 #(n = 1)",
+      "mode3": "7040-7047 #(n)",
       "comment": "$(Aerodrome #=(n))"
+    },
+    {
+      "mode3": "7050-7057 #(n+10)",
+      "comment": "$(AWACS #=(n))"
     }
   ]
 }

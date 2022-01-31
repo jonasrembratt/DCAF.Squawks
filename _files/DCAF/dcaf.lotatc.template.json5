@@ -3,7 +3,7 @@
   "enable": true,
   "transponders": [
     {
-      "mode1": "7001",
+      "mode3": "7001",
       "comment": "VFR"
     },
     {
